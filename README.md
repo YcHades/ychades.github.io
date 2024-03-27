@@ -1,2 +1,1 @@
-
-# minigpt-v2.github.io
+# 用于Geo-Jarvis的主页
