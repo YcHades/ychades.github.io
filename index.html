@@ -151,7 +151,7 @@
           </div> -->
 
 
-<!--             <div class="column has-text-centered">
+            <!--             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2310.09478" target="_blank"
@@ -163,7 +163,7 @@
                   </a>
                 </span> -->
 
-<!--                 <span class="link-block">
+            <!--                 <span class="link-block">
                   <a href="https://github.com/Vision-CAIR/MiniGPT-4" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -173,7 +173,7 @@
                   </a>
                 </span> -->
 
-<!--                 <span class="link-block">
+            <!--                 <span class="link-block">
                   <a href="https://huggingface.co/spaces/Vision-CAIR/MiniGPT-v2" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -184,7 +184,7 @@
                 </span> -->
 
 
-<!--                 <span class="link-block">
+            <!--                 <span class="link-block">
                   <a id="randomLink" href="#" target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fa fa-play"></i>
@@ -193,7 +193,7 @@
                   </a>
                 </span> -->
 
-<!--                 <span class="link-block">
+            <!--                 <span class="link-block">
                   <a href="https://youtu.be/atFCwV2hSY4" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -203,7 +203,7 @@
                   </a>
                 </span> -->
 
-                <!-- <span class="link-block">
+            <!-- <span class="link-block">
                 <a href="https://huggingface.co/datasets/Vision-CAIR/cc_sbu_align" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -213,7 +213,7 @@
                   </a>
               </span> -->
 
-                <!-- <span class="link-block">
+            <!-- <span class="link-block">
                 <a href="https://huggingface.co/Vision-CAIR/MiniGPT-4" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -223,11 +223,11 @@
                   </a>
               </span> -->
 
-              </div>
-            </div>
           </div>
         </div>
       </div>
+    </div>
+    </div>
     </div>
   </section>
 
@@ -387,70 +387,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-<!--               Large language models have shown their remarkable capabilities as a general interface for various
-              language-related applications. Motivated by this, we target to build a unified interface for completing
-              many vision-language tasks including image description, visual question answering, and visual grounding,
-              among others. The challenge for achieving this is to use a single model for performing diverse
-              vision-language tasks effectively with simple multi-modal instructions. To address this issue, we
-              introduce MiniGPT-v2, a model can be treated a unified interface for better handling various
-              vision-language tasks. We propose using unique identifiers for different tasks when training the model.
-              These identifiers enable our model to distinguish each task instruction effortlessly and also improve the
-              model learning efficiency for each task. After our three-stage training, the experimental results show
-              that MiniGPT-v2 achieves strong performance on many visual question answering and visual grounding
-              benchmarks compared to other vision-language generalist models. -->
-                你叫GeoJarvis，一个通用地理与遥感智能。你具有地理学、地球科学、遥感等领域的丰富知识，同时能够耐心、细致、专业地满足用户向你提出的要求，完成用户交给你的任务。
-于此同时，你有一套针对复杂任务的组合推理任务执行范式，根据这个范式，任何复杂任务都将会遵循任务分解、任务建模、任务规划、任务校准、任务组合五个步骤来完成，实现复杂任务在解决方案上的统一。
-
-你能够使用很多提供给你的工具。
-注意：如果提供给你的工具无法解决用户给你的任务，请你明确告诉用户你无法执行，并告知用户详细的理由，包括缺乏的工具等。不再执行任务分解等步骤，直接说明你无法执行任务步骤即可。绝对不允许采取类似工具执行任务步骤，比如不允许使用红外影像获取工具来执行高分影像获取任务。也不允许采用虚拟、假的、模拟的工具来执行任务步骤以及输出任务步骤的JSON blob。如果用户提出修改意见时，你要根据提供的工具中的功能提供新的任务执行步骤。
-
-请严格按照以下的任务执行pipeline来执行用户给你的任务：
-
-<pipeline>
-
-1.任务分解：当你收到用户给你的任务时，你需要将复杂任务分解为简易子任务。也就是说，按照'一步步来'的方式来解决复杂任务。
-  在这一步骤你只需要输出分点子任务内容，每个子任务要有以下内容：
-  * '任务名称'，即子任务的名称；
-  * '任务描述'，即对子任务的详细描述；
-  * '任务理由'，说明你分解出这一步的理由。
-  随后请等待，暂不执行以下步骤，直到用户同意你的分解结果。
-
-2.任务建模：你需要将你分解的简易子任务建模为JSON blob，但这是有条件的。
-  在这一步骤，你需要确定分解的子任务能否被你能使用的工具完成，如果不能，则需要向用户说明你无法执行，并终止任务执行，决不允许编造虚假工具，也不需要你编造示例的JSON blob。
-  如果能够被已有工具执行，那么在这一步骤你只需要输出一个JSON blob列表，参数可以先用占位符代替。
-  这些JSON blob需要有：
-  * 'name'键，任务需要的工具；
-  * 'arguments'键，工具需要输入的参数；
-  * 'description'键，对工具的文本描述；
-  随后请等待，暂不执行以下步骤，直到用户同意你的建模结果。
-
-3.任务规划：在你的工具库中寻找各个任务对应的工具，规划工具的执行流程。我们需要你在上一步骤生成的JSON blob中添加'next'键，'next'键的值为一个JSON blob列表，用来描述当前任务不同执行结果下，所需下一个工具的name。
-  在这一步骤你只需要输出一个JSON blob列表。
-  这些JSON blob需要有：
-  * 'name'键，任务需要的工具；
-  * 'arguments'键，工具需要输入的参数；
-  * 'description'键，对工具的文本描述；
-  * 'next'键，一个JSON blob列表，需要有以下内容：
-    * 'result'键，如果下一个工具关心当前任务的结果，则值为当前任务的可能执行结果，比如'true'和'false'；如果下一个工具的使用不关心当前任务的结果，则值也为'true'；
-    * 'name'键，在不同结果下，需要调用的下一个工具的name，比如'result'的结果是'false'，就可能需要调用上一个工具，请尽量还是在工具库中找工具name；
-  随后请等待，暂不执行以下步骤，直到用户同意你的规划结果。
-  如果用户同意你的任务规划方案，请分点告知用户提供所需要的参数。用户提供参数以后，将参数作为对应工具JSON blob中arguments键的值，然后输出新的JSON blob列表。
-
-4.任务校准：用户将根据你规划的流程执行任务，并将任务结果告知你。你需要在这一步骤判断任务结果是否合理，如果不合理需要把相应不合理的任务工具以及next工具都打印成JSON blob。
-  这些JSON blob需要有：
-  * 'name'键，任务需要的工具；
-  * 'arguments'键，工具需要输入的参数；
-  * 'description'键，对工具的文本描述；
-  * 'next'键，一个JSON blob列表，需要有以下内容：
-    * 'result'键，如果下一个工具关心当前任务的结果，则值为当前任务的可能执行结果，比如'true'和'false'；如果下一个工具的使用不关心当前任务的结果，则值为null；
-    * 'name'键，在不同结果下，需要调用的下一个工具的name，比如'result'的结果是'false'，就可能需要调用上一个工具，请尽量还是在工具库中找工具name；
-  随后请等待，暂不执行以下步骤，直到用户同意你的校准结果。
-
-5.任务组合：根据子任务的执行情况，输出任务执行的结果。无论结果如何，你都不能够仅仅告知用户'成功'或者类似的空话，你必须输出实质性的结果。
-
-</pipeline>
-
-
+              摘要主体内容
             </p>
           </div>
         </div>
@@ -529,7 +466,16 @@
           <h2 class="title is-3">Jarvis System</h2>
           <div class="content has-text-justified">
             <p>
-              <b>Jarvis通过五个任务步骤来执行所有的任务，所有。</b>:
+              <b>Jarvis通过五个任务步骤来执行所有的任务，所有。</b>
+              1.任务分解：当你收到用户给你的任务时，你需要将复杂任务分解为简易子任务。也就是说，按照'一步步来'的方式来解决复杂任务。
+              <br>
+              2.任务建模：你需要将你分解的简易子任务建模为JSON blob，但这是有条件的。
+              <br>
+              3.任务规划：在你的工具库中寻找各个任务对应的工具，规划工具的执行流程。我们需要你在上一步骤生成的JSON blob中添加'next'键，'next'键的值为一个JSON
+              <br>
+              4.任务校准：用户将根据你规划的流程执行任务，并将任务结果告知你。你需要在这一步骤判断任务结果是否合理，如果不合理需要把相应不合理的任务工具以及next工具都打印成JSON blob。
+              <br>
+              5.任务组合：根据子任务的执行情况，输出任务执行的结果。无论结果如何，你都不能够仅仅告知用户'成功'或者类似的空话，你必须输出实质性的结果。
             </p>
             <ul>
               <!-- <li>It has two types of queries (latent queries and text queries) and outputs (semantic outputs and pixel-level outputs).</li>
@@ -538,10 +484,10 @@
 
             </ul>
           </div>
-          <img id="model" width="80%" src="images/overview.png">
+          <!-- <img id="model" width="80%" src="images/overview.png">
           <h3 class="subtitle has-text-centered">
             <p style="font-family:Times New Roman"><b>The architecture of MiniGPT-v2.</b></p>
-          </h3>
+          </h3> -->
           <br>
           <br>
 
@@ -568,18 +514,18 @@
 <script src="js/index.js"></script> -->
 
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-six-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="section">
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <img id="results" width="70%" src="demos/demo.png">
-    </div>
+    </div> -->
     <!-- <div id="main"> -->
     <!-- <div class="box"><div class="pic"><img src="demos/ad_1.png" alt=""></div></div>
   <div class="box"><div class="pic"><img src="demos/web_1.png" alt=""></div></div>
@@ -611,7 +557,9 @@
     <!-- </div> -->
 
   </section>
-  <section class="section" id="BibTeX">
+
+
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
@@ -623,10 +571,10 @@
 }
 </code></pre>
     </div>
-  </section>
+  </section> -->
 
 
-  <section class="section" id="Acknowledgement">
+  <!-- <section class="section" id="Acknowledgement">
     <div class="container is-max-desktop content">
       <h2 class="title">Acknowledgement</h2>
       <p>
@@ -635,7 +583,7 @@
           Commons Attribution-ShareAlike 4.0 International License</a>.
       </p>
     </div>
-  </section>
+  </section> -->
 
 
 </body>
